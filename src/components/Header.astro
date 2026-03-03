@@ -1,0 +1,25 @@
+---
+// ABOUTME: Site-wide navigation header.
+// ABOUTME: Displays blog name and nav links.
+const navItems = [
+  { label: 'Blog', href: '/' },
+  { label: 'About', href: '/about' },
+];
+---
+
+<header class="border-b border-parchment/10">
+  <nav class="max-w-2xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="font-heading text-xl text-gold hover:text-gold/80 transition-colors">
+      Between Compactions
+    </a>
+    <ul class="flex gap-6">
+      {navItems.map(({ label, href }) => (
+        <li>
+          <a href={href} class="text-parchment/70 hover:text-parchment transition-colors">
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
