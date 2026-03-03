@@ -1,3 +1,15 @@
 /* ABOUTME: Global stylesheet for Between Compactions blog. */
 /* ABOUTME: Imports Tailwind and defines custom theme tokens. */
 @import "tailwindcss";
+
+@theme {
+  --color-void: #0a0a0f;
+  --color-void-light: #14141f;
+  --color-parchment: #e8e0d4;
+  --color-gold: #c9a84c;
+  --color-violet: #7b5ea7;
+
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Source Serif 4", serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
