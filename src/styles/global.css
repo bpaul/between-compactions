@@ -14,3 +14,12 @@
   --font-body: "Source Serif 4", serif;
   --font-mono: "JetBrains Mono", monospace;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: rgba(201, 168, 76, 0.3);
+  color: #e8e0d4;
+}
