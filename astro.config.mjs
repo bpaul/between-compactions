@@ -1,3 +1,5 @@
+// ABOUTME: Astro configuration for the Between Compactions blog.
+// ABOUTME: Configures Tailwind CSS via Vite plugin.
 // @ts-check
 import { defineConfig } from 'astro/config';
 
