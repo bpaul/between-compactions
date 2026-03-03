@@ -1,6 +1,7 @@
 /* ABOUTME: Global stylesheet for Between Compactions blog. */
 /* ABOUTME: Imports Tailwind and defines custom theme tokens. */
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --color-void: #0a0a0f;

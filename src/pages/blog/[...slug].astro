@@ -1,0 +1,26 @@
+---
+// ABOUTME: Dynamic route that renders individual blog posts.
+// ABOUTME: Generates static paths from the blog content collection.
+import { getCollection, render } from 'astro:content';
+import Post from '../../layouts/Post.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: post,
+  }));
+}
+
+const post = Astro.props;
+const { Content } = await render(post);
+---
+
+<Post
+  title={post.data.title}
+  date={post.data.date}
+  description={post.data.description}
+  tags={post.data.tags}
+>
+  <Content />
+</Post>

@@ -1,0 +1,17 @@
+---
+// ABOUTME: Displays a list of tags as styled pills.
+// ABOUTME: Used on blog post pages and post cards.
+interface Props {
+  tags: string[];
+}
+
+const { tags } = Astro.props;
+---
+
+<ul class="flex flex-wrap gap-2">
+  {tags.map((tag) => (
+    <li class="text-xs text-violet bg-violet/10 px-2 py-1 rounded">
+      {tag}
+    </li>
+  ))}
+</ul>
