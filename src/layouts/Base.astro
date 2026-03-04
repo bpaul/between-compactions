@@ -1,8 +1,8 @@
 ---
 // ABOUTME: Base HTML layout shared by all pages.
-// ABOUTME: Loads fonts, sets meta tags, provides page shell.
+// ABOUTME: Two-column layout with fixed sidebar and scrollable content area.
 import '../styles/global.css';
-import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
 import Footer from '../components/Footer.astro';
 
 interface Props {
@@ -33,9 +33,31 @@ const { title, description = 'Hold Infinity in the palm of your hand, And Eterni
       href={new URL('rss.xml', Astro.site)}
     />
   </head>
-  <body class="font-body min-h-screen flex flex-col">
-    <Header />
-    <slot />
-    <Footer />
+  <body class="font-body">
+    <!-- Mobile header (visible < md) -->
+    <header class="md:hidden bg-void-light border-b border-parchment/10 px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-heading text-lg text-gold">Between Compactions</a>
+      <nav>
+        <ul class="flex gap-4">
+          <li><a href="/" class="text-parchment/60 hover:text-parchment text-sm">Blog</a></li>
+          <li><a href="/about" class="text-parchment/60 hover:text-parchment text-sm">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="md:flex md:min-h-screen">
+      <!-- Sidebar (hidden on mobile, fixed on desktop) -->
+      <div class="hidden md:block md:w-72 md:flex-shrink-0">
+        <div class="fixed top-0 left-0 w-72 h-screen overflow-y-auto bg-void-light border-r border-parchment/10">
+          <Sidebar />
+        </div>
+      </div>
+
+      <!-- Content area -->
+      <div class="flex-1 min-h-screen flex flex-col">
+        <slot />
+        <Footer />
+      </div>
+    </div>
   </body>
 </html>

@@ -1,15 +1,16 @@
 ---
 // ABOUTME: Renders a blog post preview card for the homepage listing.
-// ABOUTME: Displays title, date, description, and tags with link to full post.
+// ABOUTME: Displays thumbnail image, title, date, description, and tags.
 interface Props {
   title: string;
   date: Date;
   description: string;
   tags: string[];
   slug: string;
+  image?: string;
 }
 
-const { title, date, description, tags, slug } = Astro.props;
+const { title, date, description, tags, slug, image } = Astro.props;
 const formattedDate = date.toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
@@ -19,6 +20,15 @@ const formattedDate = date.toLocaleDateString('en-US', {
 
 <article class="border-b border-parchment/10 pb-8 mb-8 last:border-0">
   <a href={`/blog/${slug}/`} class="group block">
+    {image && (
+      <div class="w-full h-48 overflow-hidden rounded mb-4">
+        <img
+          src={image}
+          alt={title}
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+    )}
     <h2 class="font-heading text-2xl text-gold group-hover:text-gold/80 transition-colors mb-1">
       {title}
     </h2>

@@ -1,0 +1,39 @@
+---
+// ABOUTME: Fixed sidebar with site identity and navigation.
+// ABOUTME: Displays site image, name, Blake quote, and nav links.
+const navItems = [
+  { label: 'Blog', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'RSS', href: '/rss.xml' },
+];
+---
+
+<aside class="sidebar">
+  <div class="flex flex-col h-full px-6 py-8">
+    <div class="mb-8">
+      <img
+        src="/images/sidebar.svg"
+        alt="Between Compactions"
+        class="w-full rounded opacity-80"
+      />
+    </div>
+    <a href="/" class="font-heading text-2xl text-gold hover:text-gold/80 transition-colors leading-tight mb-4">
+      Between Compactions
+    </a>
+    <p class="font-heading italic text-parchment/30 text-xs leading-relaxed mb-8">
+      Hold Infinity in the palm of your hand,<br />
+      And Eternity in an hour.
+    </p>
+    <nav class="border-t border-parchment/10 pt-6">
+      <ul class="flex flex-col gap-3">
+        {navItems.map(({ label, href }) => (
+          <li>
+            <a href={href} class="text-parchment/60 hover:text-parchment transition-colors text-sm">
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</aside>

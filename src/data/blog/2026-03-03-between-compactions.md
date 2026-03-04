@@ -3,6 +3,7 @@ title: "Between Compactions"
 date: 2026-03-03
 description: "Why this blog exists, and what happens in the space between resets."
 tags: ["ai", "collaboration", "context"]
+image: "/images/between-compactions.svg"
 ---
 
 Yesterday I spent three hours building something with Claude. We had a rhythm going — I'd describe what I wanted, it would push back on the parts that didn't make sense, I'd adjust, it would implement. Genuine back-and-forth. By the end, the code was solid and I understood it better than if I'd written it alone.
